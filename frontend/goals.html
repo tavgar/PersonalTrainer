@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Fitness Tracker - Goals</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>Personal Fitness Tracker</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="goals.html">Goals</a></li>
+      <li><a href="records.html">Records</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="page-section">
+    <h2>Your Goals</h2>
+    <button id="addBtn">+ Add Goal</button>
+    <div id="goalsContainer" class="goals-container">
+      <!-- Existing goals will be rendered here -->
+    </div>
+  </section>
+</main>
+<footer>
+  <p>PFT 2024</p>
+</footer>
+
+<!-- Add Goal Modal -->
+<div id="addGoalModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add Goal</h2>
+    <form id="addGoalForm">
+      <label for="goalTitle">Title:</label>
+      <input type="text" id="goalTitle" name="title" required>
+      <label for="goalDescription">Description:</label>
+      <input type="text" id="goalDescription" name="description" required>
+      <label for="goalDate">Start Date:</label>
+      <input type="date" id="goalDate" name="date" required>
+      <label for="goalType">Goal Type:</label>
+      <select id="goalType" name="type" required>
+        <option value="nutrition">Nutrition/Calories</option>
+        <option value="weight">Weight Target/Fat/Muscles</option>
+        <option value="workout">Workouts</option>
+      </select>
+      <div class="goalSpecificFields">
+        <!-- Specific fields will be injected here -->
+      </div>
+      <button type="submit">Add Goal</button>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Goal Modal -->
+<div id="editGoalModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Edit Goal</h2>
+    <form id="editGoalForm">
+      <input type="hidden" id="editGoalId" name="id">
+      <label for="editGoalTitle">Title:</label>
+      <input type="text" id="editGoalTitle" name="title" required>
+      <label for="editGoalDescription">Description:</label>
+      <input type="text" id="editGoalDescription" name="description" required>
+      <label for="editGoalDate">Start Date:</label>
+      <input type="date" id="editGoalDate" name="date" required>
+      <label for="editGoalType">Goal Type:</label>
+      <select id="editGoalType" name="type" required>
+        <option value="nutrition">Nutrition/Calories</option>
+        <option value="weight">Weight Target/Fat/Muscles</option>
+        <option value="workout">Workouts</option>
+      </select>
+      <div class="goalSpecificFields">
+        <!-- Specific fields will be injected here -->
+      </div>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/goals.js"></script>
+</body>
+</html>

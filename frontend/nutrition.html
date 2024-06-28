@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Fitness Tracker - Nutrition</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>Personal Fitness Tracker</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="goals.html">Goals</a></li>
+      <li><a href="records.html">Records</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="page-section">
+    <h2>Your Nutrition Entries</h2>
+    <button id="addBtn">+ Add Nutrition</button>
+    <table>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Meal</th>
+        <th>Food</th>
+        <th>Calories</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>2023-05-01</td>
+        <td>Breakfast</td>
+        <td>Oatmeal</td>
+        <td>150</td>
+        <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+      </tr>
+      <tr>
+        <td>2023-05-01</td>
+        <td>Lunch</td>
+        <td>Grilled Chicken Salad</td>
+        <td>300</td>
+        <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+      </tr>
+      <tr>
+        <td>2023-05-01</td>
+        <td>Dinner</td>
+        <td>Steak and Vegetables</td>
+        <td>600</td>
+        <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+<footer>
+  <p>PFT 2024</p>
+</footer>
+
+<!-- Add Nutrition Modal -->
+<div id="addNutritionModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add Nutrition</h2>
+    <form id="addNutritionForm">
+      <label for="nutritionDate">Date:</label>
+      <input type="date" id="nutritionDate" name="date" required>
+      <label for="nutritionMeal">Meal:</label>
+      <input type="text" id="nutritionMeal" name="meal" required>
+      <label for="nutritionFood">Food:</label>
+      <input type="text" id="nutritionFood" name="food" required>
+      <label for="nutritionCalories">Calories:</label>
+      <input type="number" id="nutritionCalories" name="calories" required>
+      <button type="submit">Add Nutrition</button>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Nutrition Modal -->
+<div id="editNutritionModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Edit Nutrition</h2>
+    <form id="editNutritionForm">
+      <input type="hidden" id="editNutritionId" name="id">
+      <label for="editNutritionDate">Date:</label>
+      <input type="date" id="editNutritionDate" name="date" required>
+      <label for="editNutritionMeal">Meal:</label>
+      <input type="text" id="editNutritionMeal" name="meal" required>
+      <label for="editNutritionFood">Food:</label>
+      <input type="text" id="editNutritionFood" name="food" required>
+      <label for="editNutritionCalories">Calories:</label>
+      <input type="number" id="editNutritionCalories" name="calories" required>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/nutrition.js"></script> <!-- Include nutrition.js -->
+</body>
+</html>

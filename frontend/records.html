@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Fitness Tracker - Records</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>Personal Fitness Tracker</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="goals.html">Goals</a></li>
+      <li><a href="records.html">Records</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="page-section">
+    <h2>Your Records</h2>
+    <button id="addRecordBtn">+ Add Record</button>
+    <table>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Weight (kg)</th>
+        <th>Fat (%)</th>
+        <th>Muscles (%)</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Records will be rendered here -->
+      </tbody>
+    </table>
+  </section>
+</main>
+<footer>
+  <p>PFT 2024</p>
+</footer>
+
+<!-- Add Record Modal -->
+<div id="addRecordModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add Record</h2>
+    <form id="addRecordForm">
+      <label for="recordDate">Date:</label>
+      <input type="date" id="recordDate" name="date" required>
+      <label for="recordWeight">Weight (kg):</label>
+      <input type="number" id="recordWeight" name="weight" required>
+      <label for="recordFat">Fat (%):</label>
+      <input type="number" id="recordFat" name="fat" required>
+      <label for="recordMuscles">Muscles (%):</label>
+      <input type="number" id="recordMuscles" name="muscles" required>
+      <button type="submit">Add Record</button>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Record Modal -->
+<div id="editRecordModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Edit Record</h2>
+    <form id="editRecordForm">
+      <input type="hidden" id="editRecordId" name="id">
+      <label for="editRecordDate">Date:</label>
+      <input type="date" id="editRecordDate" name="date" required>
+      <label for="editRecordWeight">Weight (kg):</label>
+      <input type="number" id="editRecordWeight" name="weight" required>
+      <label for="editRecordFat">Fat (%):</label>
+      <input type="number" id="editRecordFat" name="fat" required>
+      <label for="editRecordMuscles">Muscles (%):</label>
+      <input type="number" id="editRecordMuscles" name="muscles" required>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/records.js"></script>
+</body>
+</html>

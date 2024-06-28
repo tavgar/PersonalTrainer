@@ -1,0 +1,411 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  background-color: #2e8b57;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+}
+
+.welcome-section {
+  background-color: #2e8b57;
+  color: white;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.welcome-section h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+}
+
+.overview {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.overview div {
+  background-color: #ffffff;
+  color: #2e8b57;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.overview h3 {
+  color: #0077b6;
+  margin-top: 0;
+}
+
+.charts-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap;
+}
+
+.chart-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 42%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 300px; /* Fixed height to prevent indefinite enlargement */
+}
+
+.chart-container canvas {
+  width: 80% !important;
+  height: 80% !important;
+}
+
+.page-section {
+  background-color: #ffffff;
+  color: black;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-section h2 {
+  color: #2e8b57;
+  text-align: center;
+  margin-top: 0;
+}
+
+#addBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#addBtn:hover {
+  background-color: #276746;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #2e8b57;
+  color: white;
+}
+
+/* General button styling */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #276746;
+}
+
+.edit-btn, .delete-btn {
+  background-color: #0077b6;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+.edit-btn:hover {
+  background-color: #005f8b;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+footer {
+  background-color: #2e8b57;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#addWorkoutForm label,
+#editWorkoutForm label,
+#addNutritionForm label,
+#editNutritionForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+#addWorkoutForm input,
+#editWorkoutForm input,
+#addNutritionForm input,
+#editNutritionForm input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#addWorkoutForm button,
+#editWorkoutForm button,
+#addNutritionForm button,
+#editNutritionForm button {
+  background-color: #2e8b57;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#addWorkoutForm button:hover,
+#editWorkoutForm button:hover,
+#addNutritionForm button:hover,
+#editNutritionForm button:hover {
+  background-color: #276746;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.goals-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.goal-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goal-header h3 {
+  margin: 0;
+}
+
+.goal-actions button {
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.goal-actions button:hover {
+  color: white;
+}
+
+.goal-date, .goal-description {
+  margin: 10px 0;
+}
+
+.goal-progress {
+  position: relative;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #2e8b57;
+  text-align: center; /* Center the text inside the progress bar */
+  color: black;
+  line-height: 20px; /* Vertically center the text */
+}
+
+.progress-percentage {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  color: black;
+  line-height: 20px;
+}
+
+/* Specific styles for goal types */
+.nutrition-goal .goal-header h3 {
+  color: #ff6347; /* Tomato */
+}
+
+.weight-goal .goal-header h3 {
+  color: #4682b4; /* SteelBlue */
+}
+
+.workout-goal .goal-header h3 {
+  color: #32cd32; /* LimeGreen */
+}
+
+/* Form container styling */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+}
+
+/* Form label styling */
+.modal-content form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Form input styling */
+.modal-content form input,
+.modal-content form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Form button styling */
+.modal-content form button {
+  background-color: #2e8b57;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content form button:hover {
+  background-color: #276746;
+}
+
+#chart {
+  display: flex;
+  align-items: flex-end;
+  height: 300px;
+}

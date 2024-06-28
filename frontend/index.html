@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Fitness Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/scripts.js" defer></script>
+  <script src="js/charts.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Personal Fitness Tracker</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="workout.html">Workouts</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="goals.html">Goals</a></li>
+      <li><a href="records.html">Records</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="welcome-section">
+    <h2>Welcome, [User Name]!</h2>
+    <button id="addBtn">+ Add Record</button>
+    <div class="overview">
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <p id="lastWorkout">Last workout: </p>
+        <p id="lastMeal">Last meal: </p>
+      </div>
+      <div class="goals">
+        <h3>Your Goals</h3>
+        <ul id="goalsProgress">
+          <!-- Goals progress will be rendered here -->
+        </ul>
+      </div>
+      <div class="progress-overview">
+        <h3>Progress Overview</h3>
+        <p id="weightOverview">Weight: </p>
+        <p id="bodyFatOverview">Body Fat: </p>
+      </div>
+    </div>
+  </section>
+  <section class="charts-section">
+    <div class="chart-container">
+      <h3>Body Weight Distribution</h3>
+      <canvas id="bodyWeightChart" width="800" height="400"></canvas>
+    </div>
+  </section>
+  <div id="addRecordModalWelcome" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add Record</h2>
+      <form id="addRecordFormWelcome">
+        <label for="recordDateWelcome">Date:</label>
+        <input type="date" id="recordDateWelcome" name="date" required>
+        <label for="recordWeightWelcome">Weight (kg):</label>
+        <input type="number" id="recordWeightWelcome" name="weight" required>
+        <label for="recordFatWelcome">Fat (%):</label>
+        <input type="number" id="recordFatWelcome" name="fat" required>
+        <label for="recordMuscleWelcome">Muscle (%):</label>
+        <input type="number" id="recordMuscleWelcome" name="muscle" required>
+        <label for="recordWaterWelcome">Water (%):</label>
+        <input type="number" id="recordWaterWelcome" name="water" required>
+        <button type="submit">Add Record</button>
+      </form>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>PFT 2024</p>
+</footer>
+<script src="js/charts.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
